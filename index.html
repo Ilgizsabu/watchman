@@ -4,21 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watchman</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login">
-        <div class="login-screen">
-            <div class="app-title"><h1>Login</h1></div>
-            <div id="login-form">
-                <input type="text" placeholder="username" id="login-name">
-                <input type="password" placeholder="password" id="login-pass">
-                <button id="login-button" class="correct-input">login</button>
-            </div>
-            <div>   
-                <p id="message" class="hidden"></p>
-            </div>
-        </div>
+    <h1>Login</h1>
+    <div id="login-form">
+        <input type="text" placeholder="username" id="login-name">
+        <input type="password" placeholder="password" id="login-pass">
+        <button id="login-button" class="correct-input">login</button>
+    </div>
+    <div>   
+        <p id="message" class="hidden"></p>
     </div>
     <script>
         const users = { 
@@ -32,15 +27,11 @@
             const form = document.getElementById('login-form');
 
             if (users[login] === password) {
-                form.classList.add('hidden');
+                form.style.display = 'none';
                 message.textContent = `Привет, ${login}`;
-                message.classList.remove('hidden');
-                message.classList.add('visible');
                 message.style.color = 'green';
             } else {
                 message.textContent = 'Неверный логин или пароль';
-                message.classList.remove('hidden');
-                message.classList.add('visible');
                 message.style.color = 'red';
             }
         });
