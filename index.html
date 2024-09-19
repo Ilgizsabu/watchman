@@ -29,10 +29,8 @@
             if (users[login] === password) {
                 form.style.display = 'none';
                 message.textContent = `Привет, ${login}`;
-                message.style.color = 'green';
             } else {
                 message.textContent = 'Неверный логин или пароль';
-                message.style.color = 'red';
             }
         });
     </script>
