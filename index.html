@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watchman</title>
+    <style>
+        .message {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <h1>Login</h1>
@@ -13,7 +22,7 @@
         <button id="login-button">login</button>
     </div>
     <div>   
-        <p id="message"></p>
+        <p class="message error" id="message"></p>
     </div>
     <script>
         const users = { 
@@ -29,8 +38,10 @@
             if (users[login] === password) {
                 form.style.display = 'none';
                 message.textContent = `Привет, ${login}`;
+                message.classList = 'message';
             } else {
                 message.textContent = 'Неверный логин или пароль';
+                message.classList = 'error';
             }
         });
     </script>
